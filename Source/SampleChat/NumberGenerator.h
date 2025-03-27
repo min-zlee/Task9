@@ -12,5 +12,5 @@ class SAMPLECHAT_API UNumberGenerator : public UBlueprintFunctionLibrary
 public:
 
     UFUNCTION(BlueprintCallable, Category = "NumberGame")
-    static TArray<int32> GenerateNumber();    // 중복x 3자리 숫자 생성 (1~9)
+    static TArray<int32> GenerateNumber();
 };

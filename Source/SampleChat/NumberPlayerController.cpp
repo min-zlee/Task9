@@ -33,14 +33,6 @@ void ANumberPlayerController::BeginPlay()
 void ANumberPlayerController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
-    /*ANumberGameMode* GameMode = Cast<ANumberGameMode>(GetWorld()->GetAuthGameMode());
-    if (GameMode && TimerTextBox)
-    {
-        float CurrentTime = GameMode->GetTurnTimer();
-        TimerTextBox->SetText(FText::FromString(FString::Printf(TEXT("%d"), FMath::RoundToInt(CurrentTime))));
-    }*/
-
 }
 void ANumberPlayerController::ClientReceiveMessage_Implementation(const FString& Msg)
 {
@@ -53,17 +45,6 @@ void ANumberPlayerController::SendMessageToServer_Implementation(const FString& 
     {
         GameMode->GetMessageFromClient(Msg, PlayerState ? PlayerState->GetPlayerName() : TEXT("UnknownPlayer"), this);
     }
-    /*
-    ANumberGameMode* GameMode = Cast<ANumberGameMode>(GetWorld()->GetAuthGameMode());
-    if (GameMode && PlayerState)
-    {
-        GameMode->GetMessageFromClient(Msg, PlayerState->GetPlayerName(),this);
-    }
-    else if (GameMode)
-    {
-        GameMode->GetMessageFromClient(Msg, TEXT("UnknownPlayer"), this);
-    }
-    */
 }
 bool ANumberPlayerController::SendMessageToServer_Validate(const FString& Msg)
 {

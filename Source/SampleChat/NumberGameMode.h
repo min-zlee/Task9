@@ -29,7 +29,7 @@ public:
 
 protected:
     UPROPERTY(Replicated)
-    TArray<int32> TargetNumber; // 서버 숫자
+    TArray<int32> TargetNumber;
     UPROPERTY(Replicated)
     int32 HostAttempts;
     UPROPERTY(Replicated)
